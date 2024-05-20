@@ -9,11 +9,25 @@
     <Title>Handwritten Azure Storage manager</Title>
     <Authors>Vovikus</Authors>
     <Version>1.0.0</Version>
-    <Company>cadence development</Company>
+    <Company>Cadence Development</Company>
     <Product>StorageManager</Product>
-    <Description>Handmade storage package, made for Finbuckle.Multitenant,
-requires per-tenant Options </Description>
+    <Description>Handmade private storage package, made for Finbuckle.Multitenant,
+requires per-tenant Options definition that implements IAzureBlobOptions</Description>
+    <Copyright>(c) Cadence Development</Copyright>
+    <RepositoryUrl>https://github.com/vovannn012347/StorageManager</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>FinBuckle Multitenant Azure Storage Manager</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Azure.Storage.Blobs" Version="12.20.0" />
