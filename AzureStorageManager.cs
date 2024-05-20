@@ -1,8 +1,8 @@
 ﻿using Azure.Storage.Blobs;
-using Azure.Storage.Blobs.Models;
 using Azure.Storage.Sas;
 using Microsoft.Extensions.Options;
-using System.Web;
+using StorageManager.Interfaces;
+using StorageManager.Models;
 
 namespace StorageManager
 {
@@ -11,32 +11,6 @@ namespace StorageManager
     //return InitStorage();
     //}).InSingletonScope();
 
-    public class CloudSasResult
-    {
-        public string Url { get; internal set; }
-        public DateTimeOffset UrlExpire { get; internal set; }
-    }
-
-    public interface IAzureBlobOptions
-    {
-        public string StorageBlobConnectionString { get; set; }
-
-        public string ContainerName { get; set; }
-        public string StaticContainerName { get; set; }
-        public string SharedContainerName { get; set; }
-    }
-
-    public interface IAzureStorageService<T> where T : IAzureBlobOptions
-    {
-        public string StaticContainer { get; }
-        public string PrivateContainer { get; }
-        public string SharedContainer { get; }
-        CloudSasResult GetFileSas(string container, string fileName);
-        CloudSasResult GetFileSas(string container, string fileName, BlobSasPermissions permissions);
-        Task<bool> CheckFileExists(string container, string fileName);
-        Task TransferFile(string containerFrom, string fileNameFrom, string containerTo, string fileNameTo, bool overwrite);
-        Task UploadFileAsync(string container, string fileName, Stream stream, bool overwrite);
-    }
 
     public class AzureStorageService<T> : IAzureStorageService<T> where T : IAzureBlobOptions
     {
