@@ -8,7 +8,7 @@
     <PackageId>azure-storage-manager-sec</PackageId>
     <Title>Handwritten Azure Storage manager</Title>
     <Authors>Vovikus</Authors>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Company>Cadence Development</Company>
     <Product>StorageManager</Product>
     <Description>Handmade private storage package, made for Finbuckle.Multitenant,
